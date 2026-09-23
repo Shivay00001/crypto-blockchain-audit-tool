@@ -1,14 +1,13 @@
-from fastapi import FastAPI
-import numpy as np
+"""Top-level entry point: delegates to the real CLI in src/main.py.
 
-app = FastAPI()
+Run: python main.py --bytecode 0x6080...  (or --file path/to/bytecode.txt)
+"""
+import os
+import sys
 
-@app.get("/")
-def health_check():
-    return {"status": "operational", "model_version": "v2.4.1"}
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
 
-@app.post("/predict")
-def predict(data: dict):
-    # Simulated Inference
-    vector = np.random.rand(128)
-    return {"class_id": int(np.argmax(vector)), "confidence": float(np.max(vector))}
+from main import main  # noqa: E402
+
+if __name__ == "__main__":
+    main()

@@ -1,6 +1,10 @@
 import argparse
 import json
-from src.auditor import SmartContractAuditor
+import os
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from auditor import SmartContractAuditor
 
 def main():
     parser = argparse.ArgumentParser(description="Crypto Blockchain Audit Tool")
