@@ -1,5 +1,7 @@
 # Crypto Blockchain Audit Tool
 
+Built by [VisionQuantech](https://visionquantech.com) — AI agents, apps & tools for small businesses.
+
 Audit smart contracts with bytecode analysis and web reports.
 
 ![Language](https://img.shields.io/badge/Language-HTML-blue)
